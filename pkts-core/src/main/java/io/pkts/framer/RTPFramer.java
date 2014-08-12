@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package io.pkts.framer;
 
@@ -17,7 +17,7 @@ import java.io.IOException;
 public final class RTPFramer implements Framer<TransportPacket> {
 
     /**
-     * 
+     *
      */
     public RTPFramer() {
         // left empty intentionally
@@ -35,7 +35,7 @@ public final class RTPFramer implements Framer<TransportPacket> {
      * this indeed is a RTP packet or not. The best is to analyze the session
      * negotiation but here we are just looking at a single packet so can't do
      * that.
-     * 
+     *
      * {@inheritDoc}
      */
     @Override
@@ -52,7 +52,7 @@ public final class RTPFramer implements Framer<TransportPacket> {
                     return false;
                 }
             } catch (final IndexOutOfBoundsException e) {
-                e.printStackTrace();
+                // e.printStackTrace();
             }
             data.resetReaderIndex();
         }

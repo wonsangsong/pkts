@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package io.pkts.packet;
 
@@ -8,14 +8,14 @@ import io.pkts.protocol.IllegalProtocolException;
 import io.pkts.protocol.Protocol;
 
 /**
- * 
+ *
  * @author jonas@jonasborjesson.com
  */
 public interface TransportPacketFactory {
 
     /**
      * Create a new {@link TransportPacket}.
-     * 
+     *
      * @param protocol
      *            which protocol, currently only {@link Protocol#UDP} and
      *            {@link Protocol#TCP} are supported
@@ -39,7 +39,7 @@ public interface TransportPacketFactory {
 
     /**
      * Create a new {@link TransportPacket}.
-     * 
+     *
      * @param protocol
      *            which protocol, currently only {@link Protocol#UDP} and
      *            {@link Protocol#TCP} are supported
@@ -72,7 +72,7 @@ public interface TransportPacketFactory {
      * <li>UDP Src Port: 0</li>
      * <li>UDP Dst Port: 0</li>
      * </ul>
-     * 
+     *
      * @param payload
      * @return
      * @throws IllegalArgumentException
@@ -80,4 +80,5 @@ public interface TransportPacketFactory {
      */
     UDPPacket createUDP(Buffer payload) throws IllegalArgumentException, IllegalProtocolException;
 
+    UDPPacket createUDP(long ts, Buffer payload) throws IllegalArgumentException, IllegalProtocolException;
 }

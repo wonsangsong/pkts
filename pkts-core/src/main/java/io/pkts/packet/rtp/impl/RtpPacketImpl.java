@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package io.pkts.packet.rtp.impl;
 
@@ -31,7 +31,7 @@ public final class RtpPacketImpl extends AbstractPacket implements RtpPacket {
     private final Buffer payload;
 
     /**
-     * 
+     *
      */
     public RtpPacketImpl(final TransportPacket parent, final Buffer headers, final Buffer payload) {
         super(Protocol.RTP, parent, payload);
@@ -89,7 +89,8 @@ public final class RtpPacketImpl extends AbstractPacket implements RtpPacket {
     @Override
     public int getSeqNumber() throws IOException {
         // TODO: this is not quite right...
-        return this.headers.getShort(2);
+        // return this.headers.getShort(2);
+        return (char) this.headers.getShort(2);
     }
 
     /**
